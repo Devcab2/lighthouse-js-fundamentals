@@ -1,4 +1,4 @@
-const moves = [ 'north', 'north', 'west', 'west', 'north', 'east', 'north'];
+const moves = ['north', 'north', 'west', 'west', 'north', 'east', 'north'];
 
 const finalPosition = function(moves) {
   let position = [0,0];
@@ -6,22 +6,23 @@ const finalPosition = function(moves) {
     if (moves[i] === 'north') {
       position[1] += 1;
     }
-  
-  else if (moves[i] === 'east') {
-    position[0] += 1;
+    else if (moves[i] === 'east') {
+      position[0] += 1;
+    }
+
+    else if (moves[i] === 'south') {
+      position[1] -= 1;
+    }
+
+    else if (moves[i] === 'west') {
+      position[0] -= 1;
+    }
+
   }
 
-  else if (moves[i] === 'south') {
-    position[1] -= 1;
-  }
-
-  else if (moves[i] === 'west') {
-    position[0] -= 1;
-  }
-
+  return position;
 }
 
-return position;
-}
+
 
 console.log(finalPosition(moves));
